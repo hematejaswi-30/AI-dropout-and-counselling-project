@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Dropout Risk Detection</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
+
 <body class="bg-gray-50">
 
   <div id="root"></div>
@@ -18,6 +20,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script type="text/babel">
+
     function Navbar() {
       return (
         <nav className="flex justify-between items-center p-4 shadow bg-white sticky top-0 z-50">
@@ -25,10 +28,10 @@
             Dropalert
           </h1>
           <ul className="flex gap-6 text-gray-700 font-medium">
-            <li className="hover:text-purple-600 cursor-pointer">Home</li>
-            <li className="hover:text-purple-600 cursor-pointer">About</li>
-            <li className="hover:text-purple-600 cursor-pointer">Services</li>
-            <li className="hover:text-purple-600 cursor-pointer">Contact</li>
+            <li className="hover:text-purple-600 cursor-pointer transition">Home</li>
+            <li className="hover:text-purple-600 cursor-pointer transition">About</li>
+            <li className="hover:text-purple-600 cursor-pointer transition">Services</li>
+            <li className="hover:text-purple-600 cursor-pointer transition">Contact</li>
           </ul>
         </nav>
       );
@@ -37,20 +40,36 @@
     function Hero() {
       return (
         <section className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-center py-20">
-          <h2 className="text-4xl font-bold mb-4 animate-bounce"
-            data-aos="fade-up" data-aos-duration="1000">
+          <h2
+            className="text-4xl font-bold mb-4"
+            data-aos="fade-up"
+            data-aos-duration="900"
+          >
             Welcome to Dropalert
-            <img src="https://cdn-icons-gif.flaticon.com/6172/6172532.gif" alt="Dropalert" className="inline-block w-12 h-12 ml-2" />
+            <img
+              src="https://cdn-icons-gif.flaticon.com/6172/6172532.gif"
+              alt="Dropalert Icon"
+              className="inline-block w-12 h-12 ml-2 align-middle"
+            />
           </h2>
-          <p className="mb-6 text-lg opacity-90"
-            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            Empowering Students and Preventing Dropouts with AI & Counseling
+
+          <p
+            className="mb-6 text-lg opacity-90 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="200"
+          >
+            Empowering students and preventing dropouts through
+            AI-driven risk detection and counseling support.
           </p>
+
           <button
             data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="600"
-            className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:scale-105 transition duration-300"
+            data-aos-duration="900"
+            data-aos-delay="400"
+            className="bg-gradient-to-r from-pink-500 to-orange-400
+                       text-white font-semibold px-6 py-2 rounded-full
+                       shadow-lg hover:scale-105 transition duration-300"
           >
             Get Started
           </button>
@@ -59,39 +78,64 @@
     }
 
     function Services() {
-  const services = [
-    { title: "Students Data", desc: "Students all basic informations", link: "students.html", animation: "fade-right", icon: "https://cdn-icons-gif.flaticon.com/15401/15401425.gif" },
-    { title: "Risk Assessment", desc: "Identifies students at risk of dropping out.", link: "risk.html", animation: "zoom-in", icon: "https://cdn-icons-gif.flaticon.com/17702/17702121.gif" },
-    { title: "Counseling Services", desc: "Provides support and resources for at-risk students.", link: "counselling.html", animation: "fade-left", icon: "https://cdn-icons-gif.flaticon.com/15374/15374734.gif" },
-  ];
+      const services = [
+        {
+          title: "Students Data",
+          desc: "Stores and manages basic student information.",
+          link: "students.html",
+          animation: "fade-right",
+          icon: "https://cdn-icons-gif.flaticon.com/15401/15401425.gif"
+        },
+        {
+          title: "Risk Assessment",
+          desc: "Identifies students at risk of dropping out using AI.",
+          link: "risk.html",
+          animation: "zoom-in",
+          icon: "https://cdn-icons-gif.flaticon.com/17702/17702121.gif"
+        },
+        {
+          title: "Counseling Services",
+          desc: "Provides guidance and support for at-risk students.",
+          link: "counselling.html",
+          animation: "fade-left",
+          icon: "https://cdn-icons-gif.flaticon.com/15374/15374734.gif"
+        }
+      ];
 
-  return (
-    <section className="py-16 px-8 grid md:grid-cols-3 gap-8">
-      {services.map((s, i) => (
-        <div
-          key={i}
-          data-aos={s.animation}
-          data-aos-duration="1000"
-          data-aos-delay={i * 300}
-          className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-2xl hover:scale-105 transition duration-300"
-        >
-          <img src={s.icon} alt={s.title} className="mx-auto mb-2 w-12 h-12" />
-          <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-          <p className="text-gray-600 mb-4">{s.desc}</p>
-          <a href={s.link}>
-            <button className="bg-gradient-to-r from-blue-500 to-green-400 text-white px-4 py-2 rounded-full shadow-md hover:scale-105 transition">
-              Explore
-            </button>
-          </a>
-        </div>
-      ))}
-    </section>
-  );
-}
-
+      return (
+        <section className="py-16 px-8 grid md:grid-cols-3 gap-8">
+          {services.map((s, i) => (
+            <div
+              key={i}
+              data-aos={s.animation}
+              data-aos-duration="900"
+              data-aos-delay={i * 200}
+              className="bg-white shadow-md rounded-xl p-6 text-center
+                         hover:shadow-2xl hover:scale-105 transition duration-300"
+            >
+              <img src={s.icon} alt={s.title} className="mx-auto mb-3 w-12 h-12" />
+              <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+              <p className="text-gray-600 mb-4">{s.desc}</p>
+              <a href={s.link}>
+                <button
+                  className="bg-gradient-to-r from-blue-500 to-green-400
+                             text-white px-4 py-2 rounded-full shadow-md
+                             hover:scale-105 transition"
+                >
+                  Explore
+                </button>
+              </a>
+            </div>
+          ))}
+        </section>
+      );
+    }
 
     function App() {
-      React.useEffect(() => { AOS.init(); }, []);
+      React.useEffect(() => {
+        AOS.init({ once: true });
+      }, []);
+
       return (
         <div>
           <Navbar />
@@ -106,3 +150,4 @@
   </script>
 </body>
 </html>
+
